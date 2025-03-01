@@ -1,0 +1,175 @@
+
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Zodi - Find Your Soulmate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.core.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.theme.min.css" rel="stylesheet"/>
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="small"></script>
+</head>
+<body class="font-[Poppins] bg-gray-50"><div id="signup-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50"><div class="bg-white rounded-lg w-96 mx-auto mt-20 p-6"><h2 class="text-2xl font-semibold mb-4">Sign Up</h2><div class="space-y-4"><button class="text-gray-500 hover:text-gray-700 mb-4" onclick="document.getElementById(&#34;signup-modal&#34;).classList.add(&#34;hidden&#34;)"><i class="fas fa-arrow-left mr-2"></i>Back</button><div><label class="block text-sm font-medium mb-2">Full Name</label><input type="text" class="w-full border border-gray-200 rounded-button px-4 py-2" placeholder="Enter your full name"/></div><div><label class="block text-sm font-medium mb-2">Email</label><input type="email" class="w-full border border-gray-200 rounded-button px-4 py-2" placeholder="Enter your email"/></div><div><label class="block text-sm font-medium mb-2">Password</label><input type="password" class="w-full border border-gray-200 rounded-button px-4 py-2" placeholder="Create password"/></div><button class="w-full bg-custom text-white rounded-button py-2 hover:bg-custom/90">Create Account</button><p class="text-center mt-4 text-sm text-gray-500">Already have an account? <span class="text-custom cursor-pointer">Login</span></p></div><button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" onclick="document.getElementById(&#34;signup-modal&#34;).classList.add(&#34;hidden&#34;)"><i class="fas fa-times"></i></button></div></div><div id="login-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50"><div class="bg-white rounded-lg w-96 mx-auto mt-20 p-6"><h2 class="text-2xl font-semibold mb-4">Login</h2><div class="space-y-4"><button class="text-gray-500 hover:text-gray-700 mb-4" onclick="document.getElementById(&#34;login-modal&#34;).classList.add(&#34;hidden&#34;)"><i class="fas fa-arrow-left mr-2"></i>Back</button><div><label class="block text-sm font-medium mb-2">Email</label><input type="email" class="w-full border border-gray-200 rounded-button px-4 py-2" placeholder="Enter your email"/></div><div><label class="block text-sm font-medium mb-2">Password</label><input type="password" class="w-full border border-gray-200 rounded-button px-4 py-2" placeholder="Enter your password"/></div><button class="w-full bg-custom text-white rounded-button py-2 hover:bg-custom/90">Login</button><p class="text-center mt-4 text-sm text-gray-500">Don&#39;t have an account? <span class="text-custom cursor-pointer">Sign up</span></p></div><button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" onclick="document.getElementById(&#34;login-modal&#34;).classList.add(&#34;hidden&#34;)"><i class="fas fa-times"></i></button></div></div>
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-8xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <img src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="Nepal Dating Logo" class="h-8"/>
+                    <span class="ml-2 text-xl font-semibold text-custom">Zodi</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="!rounded-button px-4 py-2 text-custom border border-custom hover:bg-custom hover:text-white transition" onclick="document.getElementById(&#39;login-modal&#39;).classList.remove(&#39;hidden&#39;); document.getElementById(&#39;signup-modal&#39;).classList.add(&#39;hidden&#39;)">Login</button>
+                    <button class="!rounded-button px-4 py-2 bg-custom text-white hover:bg-custom/90 transition" onclick="document.getElementById(&#39;signup-modal&#39;).classList.remove(&#39;hidden&#39;); document.getElementById(&#39;login-modal&#39;).classList.add(&#39;hidden&#39;)">Sign Up</button>
+                    <select class="!rounded-button border border-gray-200 px-3 py-2 bg-white" onchange="translatePage(this.value)">
+                        <option>English</option>
+                        <option>नेपाली</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="pt-16">
+        <div class="relative h-[600px] bg-gradient-to-r from-custom to-pink-400">
+            <div class="absolute inset-0">
+                <img src="idea.jpg" class="w-full h-full object-cover mix-blend-overlay opacity-50"/>
+            </div>
+            <div class="relative max-w-8xl mx-auto px-4 py-20">
+                <div class="max-w-2xl">
+                    <h1 class="text-5xl font-bold text-white mb-6">Find Your Soulmate</h1>
+                    <p class="text-xl text-white mb-8">Connect with like-minded individuals who share your values and culture. Start your journey to find true love today.</p>
+                    <button class="!rounded-button px-8 py-4 bg-white text-custom text-lg font-semibold hover:bg-gray-100 transition" onclick="document.getElementById(&#39;login-modal&#39;).classList.remove(&#39;hidden&#39;)">
+                        <i class="fas fa-heart mr-2"></i>Start Your Love Story
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-8xl mx-auto px-4 py-16">
+            
+            <div class="mb-16"><div class="mb-16"><h2 class="text-2xl font-semibold mb-8">Why Choose Nepal Dating?</h2><div class="grid grid-cols-4 gap-6"><div class="bg-white rounded-lg shadow-sm p-6 transition-transform hover:translate-y-[-8px] duration-300"><i class="fas fa-users text-4xl text-custom mb-4"></i><h3 class="font-semibold mb-2">Largest Community</h3><p class="text-sm text-gray-500">Join thousands of Nepalese singles looking for meaningful relationships</p></div><div class="bg-white rounded-lg shadow-sm p-6 transition-transform hover:translate-y-[-8px] duration-300"><i class="fas fa-heart text-4xl text-custom mb-4"></i><h3 class="font-semibold mb-2">Perfect Matches</h3><p class="text-sm text-gray-500">Our advanced matching algorithm ensures compatible partnerships</p></div><div class="bg-white rounded-lg shadow-sm p-6 transition-transform hover:translate-y-[-8px] duration-300"><i class="fas fa-culture text-4xl text-custom mb-4"></i><h3 class="font-semibold mb-2">Cultural Focus</h3><p class="text-sm text-gray-500">Connect with people who share your cultural values and traditions</p></div><div class="bg-white rounded-lg shadow-sm p-6 transition-transform hover:translate-y-[-8px] duration-300"><i class="fas fa-mobile-alt text-4xl text-custom mb-4"></i><h3 class="font-semibold mb-2">Easy to Use</h3><p class="text-sm text-gray-500">User-friendly platform accessible on all devices</p></div></div></div></div>
+            <div class="bg-white rounded-lg shadow-sm p-8 mb-16">
+                <h2 class="text-2xl font-semibold mb-6">Cultural Preferences</h2>
+                <div class="grid grid-cols-4 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Religion</label>
+                        <select class="w-full border border-gray-200 !rounded-button px-4 py-2">
+                            <option>Select Religion</option>
+                            <option>Hindu</option>
+                            <option>Buddhist</option>
+                            <option>Muslim</option>
+                            <option>Christian</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Mother Tongue</label>
+                        <select class="w-full border border-gray-200 !rounded-button px-4 py-2">
+                            <option>Select Language</option>
+                            <option>Nepali</option>
+                            <option>Maithili</option>
+                            <option>Bhojpuri</option>
+                            <option>Tharu</option>
+                            <option>Tamang</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Caste (Optional)</label>
+                        <select class="w-full border border-gray-200 !rounded-button px-4 py-2">
+                            <option>Select Caste</option>
+                            <option>Brahmin</option>
+                            <option>Chhetri</option>
+                            <option>Newar</option>
+                            <option>Magar</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Cultural Background</label>
+                        <select class="w-full border border-gray-200 !rounded-button px-4 py-2">
+                            <option>Select Background</option>
+                            <option>Traditional</option>
+                            <option>Modern</option>
+                            <option>Mixed</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-sm p-8 mb-16">
+                <h2 class="text-2xl font-semibold mb-6">Safety Guidelines</h2>
+                <div class="grid grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <i class="fas fa-shield-alt text-4xl text-custom mb-4"></i>
+                        <h3 class="font-semibold mb-2">Verified Profiles</h3>
+                        <p class="text-sm text-gray-500">All profiles are manually verified to ensure authenticity</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-user-lock text-4xl text-custom mb-4"></i>
+                        <h3 class="font-semibold mb-2">Privacy Protection</h3>
+                        <p class="text-sm text-gray-500">Your personal information is always protected</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-comments text-4xl text-custom mb-4"></i>
+                        <h3 class="font-semibold mb-2">Safe Communication</h3>
+                        <p class="text-sm text-gray-500">Built-in messaging system with safety features</p>
+                    </div>
+                </div>
+            </div>
+        <div class="max-w-8xl mx-auto px-4 py-12 bg-white rounded-lg shadow-sm mb-16"><h2 class="text-2xl font-semibold mb-8">Premium Features</h2><div class="grid grid-cols-4 gap-6"><div class="p-6 border border-gray-200 rounded-lg text-center transition-transform hover:translate-y-[-8px] duration-300"><i class="fas fa-star text-yellow-400 text-3xl mb-4"></i><h3 class="font-semibold mb-2">Priority Matching</h3><p class="text-gray-500 text-sm">Get matched with compatible partners first</p></div><div class="p-6 border border-gray-200 rounded-lg text-center transition-transform hover:translate-y-[-8px] duration-300"><i class="fas fa-envelope text-custom text-3xl mb-4"></i><h3 class="font-semibold mb-2">Unlimited Messages</h3><p class="text-gray-500 text-sm">Chat without restrictions</p></div><div class="p-6 border border-gray-200 rounded-lg text-center transition-transform hover:translate-y-[-8px] duration-300"><i class="fas fa-eye text-custom text-3xl mb-4"></i><h3 class="font-semibold mb-2">Profile Highlights</h3><p class="text-gray-500 text-sm">Stand out from other profiles</p></div><div class="p-6 border border-gray-200 rounded-lg text-center transition-transform hover:translate-y-[-8px] duration-300"><i class="fas fa-bell text-custom text-3xl mb-4"></i><h3 class="font-semibold mb-2">Instant Notifications</h3><p class="text-gray-500 text-sm">Never miss a potential match</p></div></div></div><div class="max-w-8xl mx-auto px-4 py-12 bg-white rounded-lg shadow-sm mb-16"><h2 class="text-2xl font-semibold mb-8">Success Stories</h2><div class="grid grid-cols-3 gap-8"><div class="p-6 border border-gray-200 rounded-lg transition-transform hover:translate-y-[-8px] duration-300"><div class="flex items-center mb-4"><img src="https://randomuser.me/api/portraits/men/1.jpg" class="w-12 h-12 rounded-full mr-4" alt="Profile"/><div><h4 class="font-semibold">Raj &amp; Priya</h4><p class="text-sm text-gray-500">Kathmandu</p></div></div><p class="text-gray-600">&#39;We found each other on Nepal Dating and got married last year. Thank you for helping us find true love!&#39;</p></div><div class="p-6 border border-gray-200 rounded-lg transition-transform hover:translate-y-[-8px] duration-300"><div class="flex items-center mb-4"><img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-12 h-12 rounded-full mr-4" alt="Profile"/><div><h4 class="font-semibold">Aarav &amp; Sita</h4><p class="text-sm text-gray-500">Pokhara</p></div></div><p class="text-gray-600">&#39;The cultural matching feature helped us connect. We&#39;re now happily engaged!&#39;</p></div><div class="p-6 border border-gray-200 rounded-lg transition-transform hover:translate-y-[-8px] duration-300"><div class="flex items-center mb-4"><img src="hr.jpg" class="w-12 h-12 rounded-full mr-4" alt="Profile"/><div><h4 class="font-semibold">Monique</h4><p class="text-sm text-gray-500">Lalitpur</p></div></div><p class="text-gray-600">&#39;Met my soulmate here. The verification process made us feel safe throughout our journey.HAHA PUTANGINA&#39;</p></div></div></div></div>
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="max-w-8xl mx-auto px-4">
+                <div class="grid grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="font-semibold mb-4">About Us</h3>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="/about-us" class="hover:text-white">Our Story</a></li>
+                            <li><a href="/blog" class="hover:text-white">Blog</a></li>
+                            <li><a href="/careers" class="hover:text-white">Careers</a></li>
+                            <li><a href="/press" class="hover:text-white">Press</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-4">Support</h3>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="/help" class="hover:text-white">Help Center</a></li>
+                            <li><a href="/safety" class="hover:text-white">Safety Tips</a></li>
+                            <li><a href="/contact" class="hover:text-white">Contact Us</a></li>
+                            <li><a href="/guidelines" class="hover:text-white">Community Guidelines</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-4">Legal</h3>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="/privacy" class="hover:text-white">Privacy Policy</a></li>
+                            <li><a href="/terms" class="hover:text-white">Terms of Service</a></li>
+                            <li><a href="/cookies" class="hover:text-white">Cookie Policy</a></li>
+                            <li><a href="/copyright" class="hover:text-white">Copyright Policy</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <i class="fab fa-facebook text-2xl text-gray-400 hover:text-white cursor-pointer" outerhtml="&lt;a href=&#39;https://facebook.com&#39; target=&#39;_blank&#39;&gt;&lt;i class=&#39;fab fa-facebook text-2xl text-gray-400 hover:text-white cursor-pointer&#39;&gt;&lt;/i&gt;&lt;/a&gt;"></i>
+                            <i class="fab fa-instagram text-2xl text-gray-400 hover:text-white cursor-pointer" outerhtml="&lt;a href=&#39;https://instagram.com&#39; target=&#39;_blank&#39;&gt;&lt;i class=&#39;fab fa-instagram text-2xl text-gray-400 hover:text-white cursor-pointer&#39;&gt;&lt;/i&gt;&lt;/a&gt;"></i>
+                            <i class="fab fa-twitter text-2xl text-gray-400 hover:text-white cursor-pointer" outerhtml="&lt;a href=&#39;https://twitter.com&#39; target=&#39;_blank&#39;&gt;&lt;i class=&#39;fab fa-twitter text-2xl text-gray-400 hover:text-white cursor-pointer&#39;&gt;&lt;/i&gt;&lt;/a&gt;"></i>
+                            <i class="fab fa-youtube text-2xl text-gray-400 hover:text-white cursor-pointer" outerhtml="&lt;a href=&#39;https://youtube.com&#39; target=&#39;_blank&#39;&gt;&lt;i class=&#39;fab fa-youtube text-2xl text-gray-400 hover:text-white cursor-pointer&#39;&gt;&lt;/i&gt;&lt;/a&gt;"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                    <p>© 2024 Nepal Dating. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.min.js"></script>
+    <script>
+        new Glide('.glide', {
+            type: 'carousel',
+            perView: 2,
+            gap: 24,
+            autoplay: 5000
+        }).mount();
+    </script><script>function translatePage(lang) { if(lang === 'नेपाली') { document.getElementById('id-52').textContent = 'नेपाल डेटिङ'; document.getElementById('id-65').textContent = 'नेपालमा तपाईंको सही जोडी फेला पार्नुहोस्'; document.getElementById('id-66').textContent = 'तपाईंको मूल्य र संस्कृति साझा गर्ने व्यक्तिहरूसँग जोडिनुहोस्। आज नै तपाईंको सत्य प्रेम खोज्न सुरु गर्नुहोस्।'; document.getElementById('id-67').textContent = '✨ तपाईंको प्रेम कथा सुरु गर्नुहोस्'; document.getElementById('id-71').textContent = 'छिटो प्रोफाइल सिर्जना'; document.getElementById('id-154').textContent = 'सुरक्षा निर्देशिकाहरू'; }}</script>
